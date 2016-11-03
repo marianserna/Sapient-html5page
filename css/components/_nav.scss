@@ -31,9 +31,10 @@ nav {
 
     > li {
       width: 33.3%;
+      // Positioning to later on position dropdown absolute
       position: relative;
 
-      // change the style of the subnav when you hover the li
+      // Change the style of the subnav when you hover the li: makes it grow and fade in
       &:hover .sub-nav {
         height: 250px;
         animation: fade-in 500ms ease;
@@ -50,7 +51,7 @@ nav {
     z-index: 10;
 
     li {
-      background-color: $body-color;;
+      background-color: $body-color;
       padding: 15px 0;
 
       @media(max-width: $xs-max-width) {

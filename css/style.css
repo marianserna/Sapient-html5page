@@ -499,34 +499,24 @@ nav {
 .info {
   display: none;
   min-height: 75vh;
-  position: relative; }
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
   .info.active {
     display: block;
     animation: fade-in 1s ease-in-out; }
 
-.info::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -5;
-  opacity: 1; }
-
-#people::before {
+#people {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/maria.jpg"); }
 
-#culture::before {
+#culture {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/iguana.jpg"); }
 
-#landscape::before {
+#landscape {
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../img/chicamocha.jpg"); }
 
-#history::before {
+#history {
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../img/medellin.jpg"); }
 
 #folk {
@@ -599,11 +589,10 @@ nav {
 .info-col:last-child::after {
   border: 0px; }
 
-@media (max-width: 560px) {
-  footer {
-    font-size: 1.2rem; } }
-
 footer {
   text-align: right; }
+  @media (max-width: 560px) {
+    footer {
+      font-size: 1.2rem; } }
 
 /*# sourceMappingURL=style.css.map */

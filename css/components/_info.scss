@@ -1,14 +1,19 @@
 main {
+  // compensate for padding of the body on small device
   @media(max-width: $xs-max-width) {
     margin-left: -2em;
     margin-right: -2em;
   }
 }
 
+// Info is the whole section, which contains a row that contains 3 columns
 .info {
   display: none;
   min-height: 75vh;
   position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
   &.active {
     display: block;
@@ -16,33 +21,20 @@ main {
   }
 }
 
-.info::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -5;
-  opacity: 1;
-}
-
-#people::before {
+// Bringing mixin for background images
+#people {
   @include image-gradient(0.5, '../img/maria.jpg');
 }
 
-#culture::before {
+#culture {
   @include image-gradient(0.5, '../img/iguana.jpg');
 }
 
-#landscape::before {
+#landscape {
   @include image-gradient(0.2, '../img/chicamocha.jpg');
 }
 
-#history::before {
+#history {
   @include image-gradient(0.2, '../img/medellin.jpg');
 }
 
@@ -61,7 +53,6 @@ main {
 
   .info-row {
     padding-top: 5vh;
-
 
     h2 {
       color: #212121;
@@ -95,6 +86,7 @@ main {
 }
 
 .info-col {
+  // Need to position element to later on position ::after absolute
   position: relative;
   box-sizing: border-box;
   width: 33.3%;
@@ -126,6 +118,7 @@ main {
   }
 }
 
+// Adding line between columns
 .info-col::after {
   content: "";
   height: 35%;
@@ -141,10 +134,4 @@ main {
 
 .info-col:last-child::after {
   border: 0px;
-}
-
-footer {
-  @media(max-width: $xs-max-width) {
-    font-size: $h3-font-size;
-  }
 }

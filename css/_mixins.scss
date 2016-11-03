@@ -1,3 +1,5 @@
+// This mixin adds a background image which has a solid gradient. The gradient darkens the image so that the text on top is easier to read
+
 @mixin image-gradient($opacity, $url) {
   background-image:
   linear-gradient(
