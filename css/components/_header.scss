@@ -1,0 +1,20 @@
+header {
+  text-align: center;
+
+  h1 {
+    font-size: $h1-font-size;
+    margin: 0px;
+    padding-bottom: 10px;
+
+    @media(max-width: $xs-max-width) {
+      font-size: $xs-h1-font-size;
+    }
+  }
+
+  h3 {
+    font-family: $body-font;
+    font-size: $h3-font-size;
+    margin: 0px;
+    padding: 5px 0;
+  }
+}

@@ -1,0 +1,150 @@
+main {
+  @media(max-width: $xs-max-width) {
+    margin-left: -2em;
+    margin-right: -2em;
+  }
+}
+
+.info {
+  display: none;
+  min-height: 75vh;
+  position: relative;
+
+  &.active {
+    display: block;
+    animation: fade-in 1s ease-in-out;
+  }
+}
+
+.info::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -5;
+  opacity: 1;
+}
+
+#people::before {
+  @include image-gradient(0.5, '../img/maria.jpg');
+}
+
+#culture::before {
+  @include image-gradient(0.5, '../img/iguana.jpg');
+}
+
+#landscape::before {
+  @include image-gradient(0.2, '../img/chicamocha.jpg');
+}
+
+#history::before {
+  @include image-gradient(0.2, '../img/medellin.jpg');
+}
+
+#folk {
+  background: $folk-background-color;
+
+  .p-container {
+    color: $body-color;
+    padding: 70px 100px;
+
+    span {
+      color: #212121;
+      font-weight: bold;
+    }
+  }
+
+  .info-row {
+    padding-top: 5vh;
+
+
+    h2 {
+      color: #212121;
+      text-shadow: none;
+    }
+
+    ul {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+
+    li {
+      list-style: circle;
+      text-align: left;
+      color: $body-color;
+      padding-left: 0px;
+      padding-bottom: 15px;
+    }
+  }
+}
+
+.info-row {
+  padding-top: 35vh;
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: center;
+
+  @media(max-width: $xs-max-width), (max-width: $tablet-max-width) {
+    display: block;
+  }
+}
+
+.info-col {
+  position: relative;
+  box-sizing: border-box;
+  width: 33.3%;
+  text-align: center;
+  padding: 0 40px;
+
+  @media (max-width: $xs-max-width), (max-width: $tablet-max-width) {
+    padding-bottom: 50px;
+    margin: 0 auto;
+  }
+
+  @media(max-width: $tablet-max-width) {
+    width: 80%;
+  }
+
+  @media(max-width: $xs-max-width) {
+    width: 100%;
+  }
+
+  h2 {
+    color: $body-color;
+    text-shadow: 1px 1px #757575;
+    font-size: $h2-font-size;
+    color: $h2-color;
+  }
+
+  p {
+    color: $body-color;
+  }
+}
+
+.info-col::after {
+  content: "";
+  height: 35%;
+  position: absolute;
+  right: 0;
+  top: 15%;
+  border-right: 1px solid #FFF9C4;
+
+  @media (max-width: $xs-max-width), (max-width: $tablet-max-width) {
+    border: none;
+  }
+}
+
+.info-col:last-child::after {
+  border: 0px;
+}
+
+footer {
+  @media(max-width: $xs-max-width) {
+    font-size: $h3-font-size;
+  }
+}

@@ -1,0 +1,70 @@
+nav {
+  text-align: center;
+  cursor: pointer;
+
+  ul {
+    padding: 0px;
+    margin: 0px;
+  }
+
+  li {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+
+    @media(max-width: $xs-max-width) {
+      font-size: $h3-font-size;
+    }
+  }
+
+  .main-nav {
+    display: flex;
+    padding: 10px 0;
+
+    .trigger {
+      color: $a-color;
+
+      &:hover {
+        color: $a-hover-color;
+      }
+    }
+
+    > li {
+      width: 33.3%;
+      position: relative;
+
+      // change the style of the subnav when you hover the li
+      &:hover .sub-nav {
+        height: 250px;
+        animation: fade-in 500ms ease;
+      }
+    }
+  }
+
+  .sub-nav {
+    position: absolute;
+    height: 0px;
+    overflow: hidden;
+    width: 100%;
+    transition: height 200ms ease-in-out;
+    z-index: 10;
+
+    li {
+      background-color: $body-color;;
+      padding: 15px 0;
+
+      @media(max-width: $xs-max-width) {
+        padding: 10px 0;
+      }
+    }
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
