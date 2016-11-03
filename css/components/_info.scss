@@ -62,6 +62,11 @@ main {
     ul {
       padding-left: 50px;
       padding-right: 50px;
+
+      @media(max-width: $xs-max-width) {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
     }
 
     li {
